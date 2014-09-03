@@ -17,7 +17,7 @@
  <DefaultLanguage>0</DefaultLanguage>
  <CurrentLanguage>0</CurrentLanguage>
  <DefaultEncoding>0</DefaultEncoding>
- <BuildFlags>18704</BuildFlags>
+ <BuildFlags>26896</BuildFlags>
  <UseBuildsFolder>1</UseBuildsFolder>
  <WebApp>0</WebApp>
  <Icon>
@@ -194,6 +194,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Function KeyDown(Key As String) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>select case Asc(Key)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>case 1 ' Ctrl+A</SourceLine>
@@ -235,10 +239,28 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub Open()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim gScene As X3Core.X3Scene</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>Self.Maximize()</SourceLine>
    <SourceLine>Self.MouseCursor = System.Cursors.StandardPointer</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>loadToolbar</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>gScene = Surface.Graphics.Scene</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Redim gScene.Light(-1)</SourceLine>
+   <SourceLine>Redim gScene.Camera(-1)</SourceLine>
+   <SourceLine>Redim gScene.Model(-1)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>gScene.BackColor.Assign(0.2, 0.2, 0.2, 1)</SourceLine>
+   <SourceLine>gScene.Light.Append new X3Core.X3Light(0, 0.5, 1)</SourceLine>
+   <SourceLine>gScene.Camera.Append new X3Core.X3Camera(0, 0, zZoom)</SourceLine>
+   <SourceLine>gScene.CameraIndex = 0</SourceLine>
+   <SourceLine>gScene.SetViewport 0, 0, Surface.Width, Surface.Height</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>action_New</SourceLine>
    <SourceLine></SourceLine>
@@ -562,8 +584,20 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_New()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim gScene As X3Core.X3Scene</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>gScene = Surface.Graphics.Scene</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>CurrentModel = new X3Core.X3Model</SourceLine>
    <SourceLine>CurrentModel.Invalidate = true</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Redim gScene.Model(-1)</SourceLine>
+   <SourceLine>gScene.Model.Append CurrentModel</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>Surface.Render</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
@@ -582,6 +616,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_Open()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>Dim dlg As new OpenDialog</SourceLine>
    <SourceLine>Dim modelFile As FolderItem</SourceLine>
    <SourceLine>Dim x3mType As new FileType</SourceLine>
@@ -1075,11 +1113,11 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>zZoom As Double</SourceLine>
+   <SourceLine>zZoom As Double = 5</SourceLine>
    <SourceLine></SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
-  <ItemDeclaration>zZoom As Double = -5</ItemDeclaration>
+  <ItemDeclaration>zZoom As Double = 5</ItemDeclaration>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
@@ -14566,12 +14604,20 @@
    <EditorCount>1</EditorCount>
    <Editor>
     <EditorIndex>0</EditorIndex>
-    <EditorLocation>X3Core</EditorLocation>
+    <EditorLocation>MainWindow.action_Open</EditorLocation>
     <EditorPath></EditorPath>
-    <EditingPartID>1546309631</EditingPartID>
+    <EditingPartID>1541412863</EditingPartID>
    </Editor>
    <SelectedTab>0</SelectedTab>
   </Editors>
  </StudioWindowState>
+ <WarningPreferences>
+  <ItemName>5</ItemName>
+  <ItemData>0</ItemData>
+  <ItemName>6</ItemName>
+  <ItemData>0</ItemData>
+  <ItemName>7</ItemName>
+  <ItemData>0</ItemData>
+ </WarningPreferences>
 </block>
 </RBProject>
