@@ -17,7 +17,7 @@
  <DefaultLanguage>0</DefaultLanguage>
  <CurrentLanguage>0</CurrentLanguage>
  <DefaultEncoding>0</DefaultEncoding>
- <BuildFlags>26896</BuildFlags>
+ <BuildFlags>18704</BuildFlags>
  <UseBuildsFolder>1</UseBuildsFolder>
  <WebApp>0</WebApp>
  <Icon>
@@ -1113,7 +1113,7 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>zZoom As Double = 5</SourceLine>
+   <SourceLine>zZoom As Double</SourceLine>
    <SourceLine></SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -1625,7 +1625,7 @@
    <Visible>1</Visible>
    <ItemSource>
     <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Function MouseDown(x as Integer, y as Integer) As Boolean</SourceLine>
+    <SourceLine>Function MouseDown(x As Integer, y As Integer) As Boolean</SourceLine>
     <SourceLine>' www.Xojo3D.com</SourceLine>
     <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
     <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
@@ -1799,31 +1799,31 @@
     <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
     <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
     <SourceLine></SourceLine>
-    <SourceLine>Dim poly As X3Core.X3Polygon</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>if not DraggedMouse then</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>if (CurrentModel &lt;&gt; nil) and not Preview then</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>Surface.MakeCurrent()</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>OpenGL.glPushMatrix ' save matrix</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>OpenGL.glTranslatef 0, 0, zZoom ' move back so that the cube is in our field of view</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>poly = X3_PickPolygon(CurrentModel, x, Surface.Height - y)</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>OpenGL.glPopMatrix ' restore matrix</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>if poly &lt;&gt; nil then</SourceLine>
-    <SourceLine>poly.Selected = not poly.Selected</SourceLine>
-    <SourceLine>CurrentModel.Invalidate = true</SourceLine>
-    <SourceLine>Surface.Render</SourceLine>
-    <SourceLine>end if</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>end if</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>end if</SourceLine>
+    <SourceLine>'Dim poly As X3Core.X3Polygon</SourceLine>
+    <SourceLine>'</SourceLine>
+    <SourceLine>'if not DraggedMouse then</SourceLine>
+    <SourceLine>'</SourceLine>
+    <SourceLine>'if (CurrentModel &lt;&gt; nil) and not Preview then</SourceLine>
+    <SourceLine>'</SourceLine>
+    <SourceLine>'Surface.MakeCurrent()</SourceLine>
+    <SourceLine>'</SourceLine>
+    <SourceLine>'OpenGL.glPushMatrix ' save matrix</SourceLine>
+    <SourceLine>'</SourceLine>
+    <SourceLine>'OpenGL.glTranslatef 0, 0, zZoom ' move back so that the cube is in our field of view</SourceLine>
+    <SourceLine>'</SourceLine>
+    <SourceLine>'poly = X3_PickPolygon(CurrentModel, x, Surface.Height - y)</SourceLine>
+    <SourceLine>'</SourceLine>
+    <SourceLine>'OpenGL.glPopMatrix ' restore matrix</SourceLine>
+    <SourceLine>'</SourceLine>
+    <SourceLine>'if poly &lt;&gt; nil then</SourceLine>
+    <SourceLine>'poly.Selected = not poly.Selected</SourceLine>
+    <SourceLine>'CurrentModel.Invalidate = true</SourceLine>
+    <SourceLine>'Surface.Render</SourceLine>
+    <SourceLine>'end if</SourceLine>
+    <SourceLine>'</SourceLine>
+    <SourceLine>'end if</SourceLine>
+    <SourceLine>'</SourceLine>
+    <SourceLine>'end if</SourceLine>
     <SourceLine></SourceLine>
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
@@ -3229,7 +3229,7 @@
   </ItemSource>
  </Enumeration>
 </block>
-<block type="Module" ID="1546309631">
+<block type="Module" ID="1766232063">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
@@ -3484,8 +3484,6 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Dim mb as new MemoryBlock(16)</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>' enable depth buffer to ensure objects in distance is not drawn over objects closer to us</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glEnable OpenGL.GL_DEPTH_TEST</SourceLine>
@@ -3509,9 +3507,6 @@
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glBlendFunc OpenGL.GL_SRC_ALPHA, OpenGL.GL_ONE_MINUS_SRC_ALPHA</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' render buffer storage</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glGetIntegerv OpenGL.GL_ALPHA_BITS, mb // shouldn't be zero</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>'' Optimized texture loading source code courtesy of Alain Bailleul from Alwaysbusy's Corner.</SourceLine>
    <SourceLine>'' alwaysbusycorner.wordpress.com</SourceLine>
@@ -3914,6 +3909,7 @@
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glPopMatrix ' restore matrix</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -4107,7 +4103,7 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function X3_PickPolygon(model As X3Core.X3Model, x As Integer, y As Integer) As X3Core.X3Polygon</SourceLine>
+   <SourceLine>Function X3_PickPolygon(surface As OpenGLSurface, model As X3Core.X3Model, x As Integer, y As Integer, ByRef polygonIndex As Integer) As X3Core.X3Polygon</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
@@ -4122,15 +4118,19 @@
    <SourceLine>Dim prevUB As Integer</SourceLine>
    <SourceLine>Dim bDrawing As Boolean</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>surface.MakeCurrent()</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>polygonIndex = -1</SourceLine>
    <SourceLine>result = nil</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glDisable OpenGL.GL_LIGHTING ' disable lighting</SourceLine>
+   <SourceLine>OpenGL.glDisable OpenGL.GL_TEXTURE_2D ' disable the use of textures</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glPushMatrix ' save matrix</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' apply the model's rotation</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>X3_SetRotation(model.Rotation)</SourceLine>
+   <SourceLine>OpenGL.glScalef model.Scale.X, model.Scale.Y, model.Scale.Z ' set the model's scale</SourceLine>
+   <SourceLine>OpenGL.glTranslatef model.Position.X, model.Position.Y, model.Position.Z ' set the model's position</SourceLine>
+   <SourceLine>X3_SetRotation(model.Rotation) ' apply the model's rotation</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>' clear the background and depth buffer</SourceLine>
    <SourceLine></SourceLine>
@@ -4197,12 +4197,13 @@
    <SourceLine></SourceLine>
    <SourceLine>' get the pixel value at the given (x, y) position</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glReadPixels(x, y, 1, 1, OpenGL.GL_RGB, OpenGL.GL_UNSIGNED_BYTE, pixelData)</SourceLine>
+   <SourceLine>OpenGL.glReadPixels(x, surface.Height - y, 1, 1, OpenGL.GL_RGB, OpenGL.GL_UNSIGNED_BYTE, pixelData)</SourceLine>
    <SourceLine>pickIndex = pixelData.UInt32Value(0)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>' did we get a pixel at (x, y) other than black?</SourceLine>
    <SourceLine>if pickIndex &gt; 0 then</SourceLine>
-   <SourceLine>result = model.Polygon(pickIndex - 1)</SourceLine>
+   <SourceLine>polygonIndex = pickIndex - 1</SourceLine>
+   <SourceLine>result = model.Polygon(polygonIndex)</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glPopMatrix ' restore matrix</SourceLine>
@@ -4217,7 +4218,7 @@
   <AliasName></AliasName>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>model As X3Core.X3Model, x As Integer, y As Integer</ItemParams>
+  <ItemParams>surface As OpenGLSurface, model As X3Core.X3Model, x As Integer, y As Integer, ByRef polygonIndex As Integer</ItemParams>
   <ItemResult>X3Core.X3Polygon</ItemResult>
  </Method>
  <Method>
@@ -4767,6 +4768,101 @@
   <ItemParams>text As X3Core.X3Texture</ItemParams>
   <ItemResult>Picture</ItemResult>
  </Method>
+ <Method>
+  <ItemName>X3_AppFolder</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function X3_AppFolder() As FolderItem</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As FolderItem</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>#if TargetMacOS then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>#if DebugBuild then</SourceLine>
+   <SourceLine>result = GetFolderItem("")</SourceLine>
+   <SourceLine>#else</SourceLine>
+   <SourceLine>result = App.ExecutableFile.Parent.Parent</SourceLine>
+   <SourceLine>#endif</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>//#elseif TargetWin32 then</SourceLine>
+   <SourceLine>#else</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>#if DebugBuild then</SourceLine>
+   <SourceLine>result = GetFolderItem("").Parent</SourceLine>
+   <SourceLine>#else</SourceLine>
+   <SourceLine>result = GetFolderItem("").Child("Resources")</SourceLine>
+   <SourceLine>#endif</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>#endif</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>FolderItem</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>X3_PickModel</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function X3_PickModel(surface As OpenGLSurface, scene As X3Core.X3Scene, x As Integer, y As Integer, ByRef modelIndex As Integer, ByRef polygonIndex As Integer) As X3Core.X3Model</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine>Dim poly As X3Core.X3Polygon</SourceLine>
+   <SourceLine>Dim result As X3Core.X3Model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>surface.MakeCurrent()</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = nil</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' select the active camera</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if scene.ActiveCamera &lt;&gt; nil then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glPushMatrix ' save matrix</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>X3_SetCamera scene.ActiveCamera</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>i = scene.Model.Ubound</SourceLine>
+   <SourceLine>while (i &gt;= 0) and (result = nil)</SourceLine>
+   <SourceLine>poly = X3_PickPolygon(surface, scene.Model(i), x, y, polygonIndex)</SourceLine>
+   <SourceLine>if poly&lt;&gt; nil then</SourceLine>
+   <SourceLine>result = poly.ParentModel</SourceLine>
+   <SourceLine>modelIndex = i</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>i = i - 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glPopMatrix ' restore matrix</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>surface As OpenGLSurface, scene As X3Core.X3Scene, x As Integer, y As Integer, ByRef modelIndex As Integer, ByRef polygonIndex As Integer</ItemParams>
+  <ItemResult>X3Core.X3Model</ItemResult>
+ </Method>
  <ViewBehavior>
   <ViewProperty>
    <ObjName>Index</ObjName>
@@ -4851,9 +4947,9 @@
  <ObjName>Build Automation</ObjName>
  <ObjContainerID>0</ObjContainerID>
 </block>
-<block type="Module" ID="1589624831">
+<block type="Module" ID="1772523519">
  <ObjName>X3Camera</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5578,9 +5674,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="104075263">
+<block type="Module" ID="421537791">
  <ObjName>X3Canvas</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <Superclass>OpenGLSurface</Superclass>
  <ItemFlags>1</ItemFlags>
@@ -5600,7 +5696,6 @@
    <SourceLine>Me.MakeCurrent()</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>X3_Initialize</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -5641,6 +5736,8 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>Me.MakeCurrent()</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>Graphics.Width = Me.Width</SourceLine>
    <SourceLine>Graphics.Height = Me.Height</SourceLine>
    <SourceLine></SourceLine>
@@ -5648,6 +5745,33 @@
    <SourceLine></SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+ </HookInstance>
+ <HookInstance>
+  <ItemName>MouseDown</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function MouseDown(x as Integer, y as Integer) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
+   <SourceLine>Dim modelIndex As Integer</SourceLine>
+   <SourceLine>Dim polygonIndex As Integer</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model = X3_PickModel(Me, Me.Graphics.Scene, x, y, modelIndex, polygonIndex)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if model &lt;&gt; nil then</SourceLine>
+   <SourceLine>RaiseEvent PolygonMouseDown x, y, model.Polygon(polygonIndex), polygonIndex</SourceLine>
+   <SourceLine>RaiseEvent ModelMouseDown x, y, model, modelIndex</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return RaiseEvent MouseDown(x, y)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
   </ItemSource>
  </HookInstance>
  <Method>
@@ -5675,6 +5799,30 @@
   <ItemParams></ItemParams>
   <ItemResult></ItemResult>
  </Method>
+ <Hook>
+  <ItemName>ModelMouseDown</ItemName>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemFlags>33</ItemFlags>
+  <SystemFlags>0</SystemFlags>
+  <ItemParams>x As Integer, y As Integer, model As X3Core.X3Model, modelIndex As Integer</ItemParams>
+  <ItemResult></ItemResult>
+ </Hook>
+ <Hook>
+  <ItemName>MouseDown</ItemName>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemFlags>33</ItemFlags>
+  <SystemFlags>0</SystemFlags>
+  <ItemParams>x As Integer, y As Integer</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Hook>
+ <Hook>
+  <ItemName>PolygonMouseDown</ItemName>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemFlags>33</ItemFlags>
+  <SystemFlags>0</SystemFlags>
+  <ItemParams>x As Integer, y As Integer, polygon As X3Core.X3Polygon, polygonIndex As Integer</ItemParams>
+  <ItemResult></ItemResult>
+ </Hook>
  <Property>
   <ItemName>Graphics</ItemName>
   <Compatibility></Compatibility>
@@ -5848,9 +5996,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="2051368959">
+<block type="Module" ID="497094655">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6241,9 +6389,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1997053951">
+<block type="Module" ID="252811263">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6496,9 +6644,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1378134015">
+<block type="Module" ID="509532159">
  <ObjName>X3Graphics</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -7839,9 +7987,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1532479487">
+<block type="Module" ID="759457791">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -8816,9 +8964,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1602125823">
+<block type="Module" ID="1751322623">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -8972,9 +9120,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="289863679">
+<block type="Module" ID="2059913215">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9645,9 +9793,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="572346367">
+<block type="Module" ID="1980794879">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9949,9 +10097,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="901517311">
+<block type="Module" ID="1819244543">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -10080,9 +10228,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1859121151">
+<block type="Module" ID="479621119">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -10622,9 +10770,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="899356671">
+<block type="Module" ID="1111920639">
  <ObjName>X3Scene</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -11312,9 +11460,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1774397439">
+<block type="Module" ID="1670408191">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -11470,9 +11618,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1162680319">
+<block type="Module" ID="2117498879">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -11667,9 +11815,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1152548863">
+<block type="Module" ID="159850495">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -11837,9 +11985,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="760289279">
+<block type="Module" ID="549871615">
  <ObjName>X3IO</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -14285,9 +14433,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1371471871">
+<block type="Module" ID="1324130303">
  <ObjName>X3BoundingBox</ObjName>
- <ObjContainerID>1546309631</ObjContainerID>
+ <ObjContainerID>1766232063</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -14604,7 +14752,7 @@
    <EditorCount>1</EditorCount>
    <Editor>
     <EditorIndex>0</EditorIndex>
-    <EditorLocation>MainWindow.action_Open</EditorLocation>
+    <EditorLocation>MainWindow.Controls.Surface.MouseDown</EditorLocation>
     <EditorPath></EditorPath>
     <EditingPartID>1541412863</EditingPartID>
    </Editor>
