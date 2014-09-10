@@ -1130,14 +1130,28 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Dim s As X3Core.X3Scene</SourceLine>
+   <SourceLine>' clear the background</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>s = Surface.Graphics.Scene</SourceLine>
+   <SourceLine>OpenGL.glClearColor(0.2, 0.2, 0.2, 1) ' set the background color</SourceLine>
+   <SourceLine>OpenGL.glClear(OpenGL.GL_COLOR_BUFFER_BIT + OpenGL.GL_DEPTH_BUFFER_BIT) ' clear the background and depth buffer</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glClearColor(s.BackColor.Red, s.BackColor.Green, s.BackColor.Blue, s.BackColor.Alpha) ' set the background color</SourceLine>
-   <SourceLine>OpenGL.glClear(OpenGL.GL_COLOR_BUFFER_BIT + OpenGL.GL_DEPTH_BUFFER_BIT)</SourceLine>
+   <SourceLine>' render current model</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>X3_RenderScene s</SourceLine>
+   <SourceLine>if CurrentModel &lt;&gt; nil then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glPushMatrix ' save matrix</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glTranslatef 0, 0, zZoom ' move back so that the cube is in our field of view</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if Preview then</SourceLine>
+   <SourceLine>X3_RenderModel CurrentModel ' render model with X3 engine</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>VJ_RenderMesh CurrentModel, EditState ' render model with VectorJam rendering engine</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glPopMatrix ' restore matrix</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
