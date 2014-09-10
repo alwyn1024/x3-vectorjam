@@ -17,7 +17,7 @@
  <DefaultLanguage>0</DefaultLanguage>
  <CurrentLanguage>0</CurrentLanguage>
  <DefaultEncoding>0</DefaultEncoding>
- <BuildFlags>26896</BuildFlags>
+ <BuildFlags>18704</BuildFlags>
  <UseBuildsFolder>1</UseBuildsFolder>
  <WebApp>0</WebApp>
  <Icon>
@@ -274,6 +274,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_CenterModel()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>StoreUndo</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>CurrentModel.Center()</SourceLine>
@@ -296,6 +300,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_DeleteSelectedPolygons()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>StoreUndo</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>VJ_DeleteSelectedPolygons CurrentModel</SourceLine>
@@ -318,6 +326,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_DeselectAll()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>Dim i As Integer</SourceLine>
    <SourceLine>Dim foundSelect As Boolean</SourceLine>
    <SourceLine>Dim poly As X3Core.X3Polygon</SourceLine>
@@ -361,6 +373,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_ExtrudeNormal()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>StoreUndo</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>EditState = EditStateEnum.ExtrudeNormal</SourceLine>
@@ -386,6 +402,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_ExtrudeX()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>StoreUndo</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>EditState = EditStateEnum.ExtrudeX</SourceLine>
@@ -411,6 +431,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_ExtrudeY()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>StoreUndo</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>EditState = EditStateEnum.ExtrudeY</SourceLine>
@@ -436,6 +460,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_ExtrudeZ()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>StoreUndo</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>EditState = EditStateEnum.ExtrudeZ</SourceLine>
@@ -461,6 +489,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_Insert_Cube()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>StoreUndo</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>VJ_Insert_Cube CurrentModel</SourceLine>
@@ -484,6 +516,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_MoveNormal()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>StoreUndo</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>EditState = EditStateEnum.MoveNormal</SourceLine>
@@ -509,6 +545,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_MoveX()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>StoreUndo</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>EditState = EditStateEnum.MoveX</SourceLine>
@@ -534,6 +574,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_MoveY()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>StoreUndo</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>EditState = EditStateEnum.MoveY</SourceLine>
@@ -559,6 +603,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_MoveZ()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>StoreUndo</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>EditState = EditStateEnum.MoveZ</SourceLine>
@@ -653,6 +701,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_Save()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>Dim dlg As new SaveAsDialog</SourceLine>
    <SourceLine>Dim modelFile As FolderItem</SourceLine>
    <SourceLine>Dim x3mType As new FileType</SourceLine>
@@ -694,6 +746,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_ScaleUniform()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>StoreUndo</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>EditState = EditStateEnum.ScaleUniform</SourceLine>
@@ -719,6 +775,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_ScaleX()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>StoreUndo</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>EditState = EditStateEnum.ScaleX</SourceLine>
@@ -744,6 +804,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_ScaleY()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>StoreUndo</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>EditState = EditStateEnum.ScaleY</SourceLine>
@@ -769,6 +833,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_ScaleZ()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>StoreUndo</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>EditState = EditStateEnum.ScaleZ</SourceLine>
@@ -794,13 +862,17 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_SelectAll()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>Dim i As Integer</SourceLine>
    <SourceLine>Dim poly As X3Core.X3Polygon</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if CurrentModel &lt;&gt; nil then</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>for i = 0 to CurrentModel.Polygon.Ubound</SourceLine>
-   <SourceLineBreakpoint>6</SourceLineBreakpoint>
+   <SourceLineBreakpoint>10</SourceLineBreakpoint>
    <SourceLine>poly = CurrentModel.Polygon(i)</SourceLine>
    <SourceLine>poly.Selected = True</SourceLine>
    <SourceLine>next i</SourceLine>
@@ -826,6 +898,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_Undo()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>Dim currentRotation As X3Core.X3Quaternion</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if UndoStack.Ubound &gt;= 0 then</SourceLine>
@@ -856,6 +932,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_UnitizeModel()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>StoreUndo</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>CurrentModel.Unitize()</SourceLine>
@@ -880,6 +960,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_ZoomIn()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>zZoom = zZoom + 1</SourceLine>
    <SourceLine>Surface.Render</SourceLine>
    <SourceLine></SourceLine>
@@ -899,6 +983,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub action_ZoomOut()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>zZoom = zZoom - 1</SourceLine>
    <SourceLine>Surface.Render</SourceLine>
    <SourceLine></SourceLine>
@@ -919,6 +1007,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub loadToolbar()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>Dim button As ToolButton</SourceLine>
    <SourceLine>Dim dropMenu As MenuItem</SourceLine>
    <SourceLine>Dim dropItem As MenuItem</SourceLine>
@@ -1011,8 +1103,41 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub StoreUndo()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>UndoStack.Append CurrentModel.Clone</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>renderCanvas</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub renderCanvas()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim s As X3Core.X3Scene</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>s = Surface.Graphics.Scene</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glClearColor(s.BackColor.Red, s.BackColor.Green, s.BackColor.Blue, s.BackColor.Alpha) ' set the background color</SourceLine>
+   <SourceLine>OpenGL.glClear(OpenGL.GL_COLOR_BUFFER_BIT + OpenGL.GL_DEPTH_BUFFER_BIT)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>X3_RenderScene s</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -1824,6 +1949,23 @@
     <SourceLine>'end if</SourceLine>
     <SourceLine>'</SourceLine>
     <SourceLine>'end if</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <ItemName>Open</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Open()</SourceLine>
+    <SourceLine>' www.Xojo3D.com</SourceLine>
+    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>Me.RenderMethod = AddressOf renderCanvas</SourceLine>
+    <SourceLine></SourceLine>
     <SourceLine></SourceLine>
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
@@ -5645,6 +5787,9 @@
    <SourceLine></SourceLine>
    <SourceLine>X3_Initialize</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>RaiseEvent Open()</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
  </HookInstance>
@@ -5659,9 +5804,16 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Dim s As X3Core.X3Scene</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>Me.MakeCurrent()</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// did the user of X3Canvas override the default rendernig routine?</SourceLine>
+   <SourceLine>if RenderMethod &lt;&gt; nil then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>RenderMethod.Invoke()</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim s As X3Core.X3Scene</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>s = Graphics.Scene</SourceLine>
    <SourceLine></SourceLine>
@@ -5669,6 +5821,9 @@
    <SourceLine>OpenGL.glClear(OpenGL.GL_COLOR_BUFFER_BIT + OpenGL.GL_DEPTH_BUFFER_BIT)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>X3_RenderScene s</SourceLine>
+   <SourceLineBreakpoint>21</SourceLineBreakpoint>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Function</SourceLine>
   </ItemSource>
@@ -5747,6 +5902,21 @@
   <ItemParams></ItemParams>
   <ItemResult></ItemResult>
  </Method>
+ <DelegateDeclaration>
+  <ItemName>RenderMethodDelegate</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Delegate Sub RenderMethodDelegate()</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
+ </DelegateDeclaration>
  <Hook>
   <ItemName>ModelMouseDown</ItemName>
   <TextEncoding>134217984</TextEncoding>
@@ -5771,6 +5941,14 @@
   <ItemParams>x As Integer, y As Integer, polygon As X3Core.X3Polygon, polygonIndex As Integer</ItemParams>
   <ItemResult></ItemResult>
  </Hook>
+ <Hook>
+  <ItemName>Open</ItemName>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemFlags>33</ItemFlags>
+  <SystemFlags>0</SystemFlags>
+  <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
+ </Hook>
  <Property>
   <ItemName>Graphics</ItemName>
   <Compatibility></Compatibility>
@@ -5782,6 +5960,20 @@
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <ItemDeclaration>Graphics As X3Core.X3Graphics</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>RenderMethod</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>RenderMethod As RenderMethodDelegate</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>RenderMethod As RenderMethodDelegate</ItemDeclaration>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
@@ -14729,15 +14921,58 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
+<block type="Module" ID="219564031">
+ <ObjName>VJCanvas</ObjName>
+ <ObjContainerID>1637615615</ObjContainerID>
+ <IsClass>1</IsClass>
+ <ItemFlags>1</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <Compatibility></Compatibility>
+ <ViewBehavior>
+  <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Index</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <PropertyValue>-2147483648</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Left</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Top</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+ </ViewBehavior>
+</block>
 <block type="UIState" ID="0">
  <StudioWindowState>
   <Editors>
    <EditorCount>1</EditorCount>
    <Editor>
     <EditorIndex>0</EditorIndex>
-    <EditorLocation>X3Core</EditorLocation>
+    <EditorLocation>MainWindow.renderCanvas</EditorLocation>
     <EditorPath></EditorPath>
-    <EditingPartID>2142396415</EditingPartID>
+    <EditingPartID>1541412863</EditingPartID>
    </Editor>
    <SelectedTab>0</SelectedTab>
   </Editors>
