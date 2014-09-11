@@ -971,7 +971,7 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>zZoom = zZoom + 1</SourceLine>
+   <SourceLine>Surface.Graphics.Scene.ActiveCamera.DollyIn 0.5</SourceLine>
    <SourceLine>Surface.Render</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
@@ -994,7 +994,7 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>zZoom = zZoom - 1</SourceLine>
+   <SourceLine>Surface.Graphics.Scene.ActiveCamera.DollyOut 0.5</SourceLine>
    <SourceLine>Surface.Render</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine></SourceLine>
@@ -3856,7 +3856,6 @@
    <SourceLine></SourceLine>
    <SourceLine>X3_SetMaterial new X3Core.X3Material ' reset OpenGL's material settings</SourceLine>
    <SourceLine>OpenGL.glColor4d(1, 1, 1, 1) ' reset color to pure white</SourceLine>
-   <SourceLineBreakpoint>101</SourceLineBreakpoint>
    <SourceLine></SourceLine>
    <SourceLine>currMat = 1</SourceLine>
    <SourceLine>currIndex = -1</SourceLine>
@@ -14960,7 +14959,7 @@
    <EditorCount>1</EditorCount>
    <Editor>
     <EditorIndex>0</EditorIndex>
-    <EditorLocation>MainWindow.renderCanvas</EditorLocation>
+    <EditorLocation>MainWindow.action_ZoomOut</EditorLocation>
     <EditorPath></EditorPath>
     <EditingPartID>1541412863</EditingPartID>
    </Editor>
