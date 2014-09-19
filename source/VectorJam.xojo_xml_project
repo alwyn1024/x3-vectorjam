@@ -17,7 +17,7 @@
  <DefaultLanguage>0</DefaultLanguage>
  <CurrentLanguage>0</CurrentLanguage>
  <DefaultEncoding>0</DefaultEncoding>
- <BuildFlags>26896</BuildFlags>
+ <BuildFlags>18704</BuildFlags>
  <UseBuildsFolder>1</UseBuildsFolder>
  <WebApp>0</WebApp>
  <Icon>
@@ -1137,6 +1137,8 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>//Dim s As X3Core.X3Scene</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>' clear the background</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glClearColor(0.2, 0.2, 0.2, 1) ' set the background color</SourceLine>
@@ -1148,22 +1150,13 @@
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glPushMatrix ' save matrix</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glTranslatef 0, 0, zZoom ' move back so that the cube is in our field of view</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>if Preview then</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Dim s As X3Core.X3Scene</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>s = Surface.Graphics.Scene</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glClearColor(s.BackColor.Red, s.BackColor.Green, s.BackColor.Blue, s.BackColor.Alpha) ' set the background color</SourceLine>
-   <SourceLine>OpenGL.glClear(OpenGL.GL_COLOR_BUFFER_BIT + OpenGL.GL_DEPTH_BUFFER_BIT)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>X3_RenderScene s</SourceLine>
+   <SourceLine>X3_RenderScene Surface.Graphics.Scene</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>VJ_RenderMesh CurrentModel, EditState ' render model with VectorJam rendering engine</SourceLine>
+   <SourceLine>VJ_RenderScene Surface.Graphics.Scene, EditState ' render scene with VectorJam rendering algorithm</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
@@ -2006,47 +1999,47 @@
  <Control>
   <ControlClass>MainToolbar</ControlClass>
   <ItemName>MainToolbar</ItemName>
-  <PropertyVal Name="Name">tbMain</PropertyVal>
-  <PropertyVal Name="Index">-2147483648</PropertyVal>
-  <PropertyVal Name="Scope">0</PropertyVal>
-  <PropertyVal Name="Left">20</PropertyVal>
-  <PropertyVal Name="Top">20</PropertyVal>
-  <PropertyVal Name="Width">100</PropertyVal>
-  <PropertyVal Name="Height">32</PropertyVal>
-  <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="InitialParent"></PropertyVal>
   <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Height">32</PropertyVal>
+  <PropertyVal Name="Width">100</PropertyVal>
+  <PropertyVal Name="Top">20</PropertyVal>
+  <PropertyVal Name="Left">20</PropertyVal>
+  <PropertyVal Name="Scope">0</PropertyVal>
   <PropertyVal Name="Super">MainToolbar</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="Name">tbMain</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
  </Control>
  <Control>
   <ControlClass>X3Core.X3Canvas</ControlClass>
   <ItemName>X3Core.X3Canvas</ItemName>
-  <PropertyVal Name="Name">Surface</PropertyVal>
-  <PropertyVal Name="Index">-2147483648</PropertyVal>
-  <PropertyVal Name="Scope">1</PropertyVal>
-  <PropertyVal Name="Left"><Hex bytes="1">30</Hex></PropertyVal>
-  <PropertyVal Name="Top"><Hex bytes="1">30</Hex></PropertyVal>
-  <PropertyVal Name="Width">600</PropertyVal>
-  <PropertyVal Name="Height">400</PropertyVal>
-  <PropertyVal Name="LockLeft">True</PropertyVal>
-  <PropertyVal Name="LockTop">True</PropertyVal>
-  <PropertyVal Name="LockRight">True</PropertyVal>
-  <PropertyVal Name="LockBottom">True</PropertyVal>
-  <PropertyVal Name="TabPanelIndex"><Hex bytes="1">30</Hex></PropertyVal>
-  <PropertyVal Name="TabIndex"><Hex bytes="1">30</Hex></PropertyVal>
-  <PropertyVal Name="TabStop">True</PropertyVal>
-  <PropertyVal Name="InitialParent"></PropertyVal>
-  <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="HelpTag"></PropertyVal>
-  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
-  <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="ColorBits">24</PropertyVal>
-  <PropertyVal Name="DepthBits">24</PropertyVal>
   <PropertyVal Name="DoubleBuffer">True</PropertyVal>
+  <PropertyVal Name="DepthBits">24</PropertyVal>
+  <PropertyVal Name="ColorBits">24</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="TabStop">True</PropertyVal>
+  <PropertyVal Name="TabIndex"><Hex bytes="1">30</Hex></PropertyVal>
+  <PropertyVal Name="TabPanelIndex"><Hex bytes="1">30</Hex></PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="Height">400</PropertyVal>
+  <PropertyVal Name="Width">600</PropertyVal>
+  <PropertyVal Name="Top"><Hex bytes="1">30</Hex></PropertyVal>
+  <PropertyVal Name="Left"><Hex bytes="1">30</Hex></PropertyVal>
+  <PropertyVal Name="Scope">1</PropertyVal>
   <PropertyVal Name="Super">X3Core.X3Canvas</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="Name">Surface</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>0</Locked>
  </Control>
@@ -2065,6 +2058,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_AdjustExtrudeNormal(model As X3Core.X3Model, value As Double)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2106,6 +2103,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_AdjustExtrudeX(model As X3Core.X3Model, value As Double)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2145,6 +2146,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_AdjustExtrudeY(model As X3Core.X3Model, value As Double)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2184,6 +2189,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_AdjustExtrudeZ(model As X3Core.X3Model, value As Double)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2223,6 +2232,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_AdjustMoveNormal(model As X3Core.X3Model, value As Double)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2264,6 +2277,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_AdjustMoveX(model As X3Core.X3Model, value As Double)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2294,6 +2311,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_AdjustMoveY(model As X3Core.X3Model, value As Double)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2324,6 +2345,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_AdjustMoveZ(model As X3Core.X3Model, value As Double)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2354,6 +2379,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_AdjustScaleUniform(model As X3Core.X3Model, value As Double)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2385,6 +2414,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_AdjustScaleX(model As X3Core.X3Model, value As Double)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2414,6 +2447,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_AdjustScaleY(model As X3Core.X3Model, value As Double)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2443,6 +2480,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_AdjustScaleZ(model As X3Core.X3Model, value As Double)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2472,6 +2513,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_CommitExtrude(model As X3Core.X3Model)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2511,6 +2556,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_CommitMove(model As X3Core.X3Model)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2546,6 +2595,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_CommitScale(model As X3Core.X3Model)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2583,6 +2636,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_DeleteSelectedPolygons(model As X3Core.X3Model)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2623,6 +2680,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_Initialize()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>' enable depth buffer to ensure objects in distance is not drawn over objects closer to us</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glEnable OpenGL.GL_DEPTH_TEST</SourceLine>
@@ -2670,6 +2731,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_Insert_Cube(model As X3Core.X3Model)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -2773,105 +2838,75 @@
   <ItemResult></ItemResult>
  </Method>
  <Method>
-  <ItemName>VJ_RenderMesh</ItemName>
+  <ItemName>VJ_RenderScene</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub VJ_RenderMesh(model As X3Core.X3Model, editState As VectorJam.EditStateEnum)</SourceLine>
+   <SourceLine>Sub VJ_RenderScene(scene As X3Core.X3Scene, editState As VectorJam.EditStateEnum)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glDisable OpenGL.GL_TEXTURE_2D ' disable the use of textures</SourceLine>
+   <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>VJ_Initialize()</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glPushMatrix ' save matrix</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' apply the model's rotation</SourceLine>
+   <SourceLine>' set up the lights</SourceLine>
+   <SourceLine>i = 0</SourceLine>
+   <SourceLine>while i &lt;= scene.Light.Ubound</SourceLine>
+   <SourceLine>select case i</SourceLine>
+   <SourceLine>case 0</SourceLine>
+   <SourceLine>X3_EnableLight OpenGL.GL_LIGHT0, scene.Light(i)</SourceLine>
+   <SourceLine>case 1</SourceLine>
+   <SourceLine>X3_EnableLight OpenGL.GL_LIGHT0, scene.Light(i)</SourceLine>
+   <SourceLine>case 2</SourceLine>
+   <SourceLine>X3_EnableLight OpenGL.GL_LIGHT0, scene.Light(i)</SourceLine>
+   <SourceLine>case 3</SourceLine>
+   <SourceLine>X3_EnableLight OpenGL.GL_LIGHT0, scene.Light(i)</SourceLine>
+   <SourceLine>case 4</SourceLine>
+   <SourceLine>X3_EnableLight OpenGL.GL_LIGHT0, scene.Light(i)</SourceLine>
+   <SourceLine>case 5</SourceLine>
+   <SourceLine>X3_EnableLight OpenGL.GL_LIGHT0, scene.Light(i)</SourceLine>
+   <SourceLine>case 6</SourceLine>
+   <SourceLine>X3_EnableLight OpenGL.GL_LIGHT0, scene.Light(i)</SourceLine>
+   <SourceLine>case 7</SourceLine>
+   <SourceLine>X3_EnableLight OpenGL.GL_LIGHT0, scene.Light(i)</SourceLine>
+   <SourceLine>end select</SourceLine>
+   <SourceLine>i = i + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>X3_SetRotation(model.Rotation)</SourceLine>
+   <SourceLine>' select the active camera</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' have we rendered this model previous innto an OpenGL display list?</SourceLine>
-   <SourceLine>if (model.OGLName &gt; 0) and not model.Invalidate then</SourceLine>
+   <SourceLine>if scene.ActiveCamera &lt;&gt; nil then</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glCallList model.OGLName 'yes, so render this existing list</SourceLine>
+   <SourceLine>X3_SetCamera scene.ActiveCamera</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>else</SourceLine>
+   <SourceLine>// render all the models in the scene</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' is the model loaded in OpenGL memory and invalid?</SourceLine>
-   <SourceLine>if (model.OGLName &gt; 0) and model.Invalidate then</SourceLine>
-   <SourceLine>' yes, so first remove the model from OpenGL memory</SourceLine>
-   <SourceLine>OpenGL.glDeleteLists(model.OGLName, 1)</SourceLine>
-   <SourceLine>model.OGLName = 0</SourceLine>
-   <SourceLine>model.Invalidate = false</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' create a new OpenGL display list</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>model.OGLName = OpenGL.glGenLists(1)</SourceLine>
-   <SourceLine>OpenGL.glNewList model.OGLName, OpenGL.GL_COMPILE</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' ===== DRAW BACK FACES =======================================</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glCullFace OpenGL.GL_FRONT</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glPolygonMode(OpenGL.GL_FRONT_AND_BACK, OpenGL.GL_FILL) ' draw filled polygons</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' draw polygon faces</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glPolygonOffset(1.0, 1.0)</SourceLine>
-   <SourceLine>OpenGL.glEnable(OpenGL.GL_POLYGON_OFFSET_FILL)</SourceLine>
-   <SourceLine>OpenGL.glPolygonMode(OpenGL.GL_FRONT_AND_BACK, OpenGL.GL_FILL)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>VJ_SubmitMesh model, editState, false, true</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' draw polygon borders</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glDisable(OpenGL.GL_POLYGON_OFFSET_FILL)</SourceLine>
-   <SourceLine>OpenGL.glPolygonMode(OpenGL.GL_FRONT_AND_BACK, OpenGL.GL_LINE) ' polygon lines</SourceLine>
-   <SourceLine>OpenGL.glColor4d(0, 0, 0, 1) ' all borders are drawn in black</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>VJ_SubmitMesh model, editState, true</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' ===== DRAW FRONT FACES =======================================</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glCullFace OpenGL.GL_BACK</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glPolygonMode(OpenGL.GL_FRONT_AND_BACK, OpenGL.GL_FILL) ' draw filled polygons</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' draw polygon faces</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glPolygonOffset(1.0, 1.0)</SourceLine>
-   <SourceLine>OpenGL.glEnable(OpenGL.GL_POLYGON_OFFSET_FILL)</SourceLine>
-   <SourceLine>OpenGL.glPolygonMode(OpenGL.GL_FRONT_AND_BACK, OpenGL.GL_FILL)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>VJ_SubmitMesh model, editState</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' draw polygon borders</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glDisable(OpenGL.GL_POLYGON_OFFSET_FILL)</SourceLine>
-   <SourceLine>OpenGL.glPolygonMode(OpenGL.GL_FRONT_AND_BACK, OpenGL.GL_LINE) ' polygon lines</SourceLine>
-   <SourceLine>OpenGL.glColor4d(0, 0, 0, 1) ' all borders are drawn in black</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>VJ_SubmitMesh model, editState, true</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glDisable(OpenGL.GL_POLYGON_OFFSET_FILL)</SourceLine>
-   <SourceLine>OpenGL.glPolygonMode(OpenGL.GL_FRONT_AND_BACK, OpenGL.GL_FILL)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glEndList ' end of display list</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glCallList model.OGLName ' render the display  list</SourceLine>
+   <SourceLine>for i = 0 to scene.Model.Ubound</SourceLine>
+   <SourceLine>//X3_RenderModel(scene.Model(i))</SourceLine>
+   <SourceLine>VJ_RenderModel(scene.Model(i), editState)</SourceLine>
+   <SourceLine>next i</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glPopMatrix ' restore matrix</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <AliasName></AliasName>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>model As X3Core.X3Model, editState As VectorJam.EditStateEnum</ItemParams>
+  <ItemParams>scene As X3Core.X3Scene, editState As VectorJam.EditStateEnum</ItemParams>
   <ItemResult></ItemResult>
  </Method>
  <Method>
@@ -2881,6 +2916,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_StartExtrude(model As X3Core.X3Model)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -3003,6 +3042,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_StartMove(model As X3Core.X3Model)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -3075,6 +3118,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_StartScale(model As X3Core.X3Model)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -3166,6 +3213,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub VJ_SubmitMesh(model As X3Core.X3Model, editMode As VectorJam.EditStateEnum, borders As Boolean = false, backfaces As Boolean = false)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>#pragma DisableBackgroundTasks</SourceLine>
    <SourceLine>#pragma NilObjectChecking</SourceLine>
    <SourceLine>#pragma StackOverflowChecking</SourceLine>
@@ -3269,6 +3320,106 @@
   <ItemFlags>33</ItemFlags>
   <IsShared>0</IsShared>
   <ItemParams>model As X3Core.X3Model, editMode As VectorJam.EditStateEnum, borders As Boolean = false, backfaces As Boolean = false</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>VJ_RenderModel</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub VJ_RenderModel(model As X3Core.X3Model, editState As VectorJam.EditStateEnum)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glPushMatrix ' save matrix</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' apply the model's rotation</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>X3_SetRotation(model.Rotation)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' have we rendered this model previous innto an OpenGL display list?</SourceLine>
+   <SourceLine>if (model.OGLName &gt; 0) and not model.Invalidate then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glCallList model.OGLName 'yes, so render this existing list</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' is the model loaded in OpenGL memory and invalid?</SourceLine>
+   <SourceLine>if (model.OGLName &gt; 0) and model.Invalidate then</SourceLine>
+   <SourceLine>' yes, so first remove the model from OpenGL memory</SourceLine>
+   <SourceLine>OpenGL.glDeleteLists(model.OGLName, 1)</SourceLine>
+   <SourceLine>model.OGLName = 0</SourceLine>
+   <SourceLine>model.Invalidate = false</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' create a new OpenGL display list</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model.OGLName = OpenGL.glGenLists(1)</SourceLine>
+   <SourceLine>OpenGL.glNewList model.OGLName, OpenGL.GL_COMPILE</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' ===== DRAW BACK FACES =======================================</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glCullFace OpenGL.GL_FRONT</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glPolygonMode(OpenGL.GL_FRONT_AND_BACK, OpenGL.GL_FILL) ' draw filled polygons</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' draw polygon faces</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glPolygonOffset(1.0, 1.0)</SourceLine>
+   <SourceLine>OpenGL.glEnable(OpenGL.GL_POLYGON_OFFSET_FILL)</SourceLine>
+   <SourceLine>OpenGL.glPolygonMode(OpenGL.GL_FRONT_AND_BACK, OpenGL.GL_FILL)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>VJ_SubmitMesh model, editState, false, true</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' draw polygon borders</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glDisable(OpenGL.GL_POLYGON_OFFSET_FILL)</SourceLine>
+   <SourceLine>OpenGL.glPolygonMode(OpenGL.GL_FRONT_AND_BACK, OpenGL.GL_LINE) ' polygon lines</SourceLine>
+   <SourceLine>OpenGL.glColor4d(0, 0, 0, 1) ' all borders are drawn in black</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>VJ_SubmitMesh model, editState, true</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' ===== DRAW FRONT FACES =======================================</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glCullFace OpenGL.GL_BACK</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glPolygonMode(OpenGL.GL_FRONT_AND_BACK, OpenGL.GL_FILL) ' draw filled polygons</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' draw polygon faces</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glPolygonOffset(1.0, 1.0)</SourceLine>
+   <SourceLine>OpenGL.glEnable(OpenGL.GL_POLYGON_OFFSET_FILL)</SourceLine>
+   <SourceLine>OpenGL.glPolygonMode(OpenGL.GL_FRONT_AND_BACK, OpenGL.GL_FILL)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>VJ_SubmitMesh model, editState</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' draw polygon borders</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glDisable(OpenGL.GL_POLYGON_OFFSET_FILL)</SourceLine>
+   <SourceLine>OpenGL.glPolygonMode(OpenGL.GL_FRONT_AND_BACK, OpenGL.GL_LINE) ' polygon lines</SourceLine>
+   <SourceLine>OpenGL.glColor4d(0, 0, 0, 1) ' all borders are drawn in black</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>VJ_SubmitMesh model, editState, true</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glDisable(OpenGL.GL_POLYGON_OFFSET_FILL)</SourceLine>
+   <SourceLine>OpenGL.glPolygonMode(OpenGL.GL_FRONT_AND_BACK, OpenGL.GL_FILL)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glEndList ' end of display list</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glCallList model.OGLName ' render the display  list</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glPopMatrix ' restore matrix</SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>model As X3Core.X3Model, editState As VectorJam.EditStateEnum</ItemParams>
   <ItemResult></ItemResult>
  </Method>
  <Property>
@@ -14959,9 +15110,9 @@
    <EditorCount>1</EditorCount>
    <Editor>
     <EditorIndex>0</EditorIndex>
-    <EditorLocation>MainWindow.action_ZoomOut</EditorLocation>
+    <EditorLocation>VectorJam.VJ_RenderScene</EditorLocation>
     <EditorPath></EditorPath>
-    <EditingPartID>1541412863</EditingPartID>
+    <EditingPartID>1637615615</EditingPartID>
    </Editor>
    <SelectedTab>0</SelectedTab>
   </Editors>
