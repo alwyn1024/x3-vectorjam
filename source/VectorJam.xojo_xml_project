@@ -1949,31 +1949,26 @@
     <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
     <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
     <SourceLine></SourceLine>
-    <SourceLine>'Dim poly As X3Core.X3Polygon</SourceLine>
-    <SourceLine>'</SourceLine>
-    <SourceLine>'if not DraggedMouse then</SourceLine>
-    <SourceLine>'</SourceLine>
-    <SourceLine>'if (CurrentModel &lt;&gt; nil) and not Preview then</SourceLine>
-    <SourceLine>'</SourceLine>
-    <SourceLine>'Surface.MakeCurrent()</SourceLine>
-    <SourceLine>'</SourceLine>
-    <SourceLine>'OpenGL.glPushMatrix ' save matrix</SourceLine>
-    <SourceLine>'</SourceLine>
-    <SourceLine>'OpenGL.glTranslatef 0, 0, zZoom ' move back so that the cube is in our field of view</SourceLine>
-    <SourceLine>'</SourceLine>
-    <SourceLine>'poly = X3_PickPolygon(CurrentModel, x, Surface.Height - y)</SourceLine>
-    <SourceLine>'</SourceLine>
-    <SourceLine>'OpenGL.glPopMatrix ' restore matrix</SourceLine>
-    <SourceLine>'</SourceLine>
-    <SourceLine>'if poly &lt;&gt; nil then</SourceLine>
-    <SourceLine>'poly.Selected = not poly.Selected</SourceLine>
-    <SourceLine>'CurrentModel.Invalidate = true</SourceLine>
-    <SourceLine>'Surface.Render</SourceLine>
-    <SourceLine>'end if</SourceLine>
-    <SourceLine>'</SourceLine>
-    <SourceLine>'end if</SourceLine>
-    <SourceLine>'</SourceLine>
-    <SourceLine>'end if</SourceLine>
+    <SourceLine>Dim poly As X3Core.X3Polygon</SourceLine>
+    <SourceLine>Dim polyIndex As Integer</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>if not DraggedMouse then</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>if (CurrentModel &lt;&gt; nil) and not Preview then</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>X3_SetCamera Me.Graphics.Scene.ActiveCamera</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>poly = X3_PickPolygon(Surface, CurrentModel, x, y, polyIndex)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>if poly &lt;&gt; nil then</SourceLine>
+    <SourceLine>poly.Selected = not poly.Selected</SourceLine>
+    <SourceLine>CurrentModel.Invalidate = true</SourceLine>
+    <SourceLine>Surface.Render</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>end if</SourceLine>
     <SourceLine></SourceLine>
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
@@ -15174,7 +15169,7 @@
    <EditorCount>1</EditorCount>
    <Editor>
     <EditorIndex>0</EditorIndex>
-    <EditorLocation>MainWindow.Controls.Surface.MouseDown</EditorLocation>
+    <EditorLocation>MainWindow.Controls.Surface.MouseUp</EditorLocation>
     <EditorPath></EditorPath>
     <EditingPartID>1541412863</EditingPartID>
    </Editor>
