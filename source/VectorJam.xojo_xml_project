@@ -17,7 +17,7 @@
  <DefaultLanguage>0</DefaultLanguage>
  <CurrentLanguage>0</CurrentLanguage>
  <DefaultEncoding>0</DefaultEncoding>
- <BuildFlags>18704</BuildFlags>
+ <BuildFlags>26896</BuildFlags>
  <UseBuildsFolder>1</UseBuildsFolder>
  <WebApp>0</WebApp>
  <Icon>
@@ -1944,7 +1944,7 @@
    <Visible>1</Visible>
    <ItemSource>
     <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Sub MouseUp(x as Integer, y as Integer)</SourceLine>
+    <SourceLine>Sub MouseUp(x As Integer, y As Integer)</SourceLine>
     <SourceLine>' www.Xojo3D.com</SourceLine>
     <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
     <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
@@ -3553,7 +3553,7 @@
   </ItemSource>
  </Enumeration>
 </block>
-<block type="Module" ID="2142396415">
+<block type="Module" ID="1511282687">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
@@ -5139,6 +5139,12 @@
  </Method>
  <ViewBehavior>
   <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Index</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>ID</PropertyGroup>
@@ -5146,23 +5152,17 @@
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Left</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>Position</PropertyGroup>
    <PropertyValue>0</PropertyValue>
    <ItemType>Integer</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Name</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Super</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
   </ViewProperty>
   <ViewProperty>
    <ObjName>Top</ObjName>
@@ -5221,9 +5221,9 @@
  <ObjName>Build Automation</ObjName>
  <ObjContainerID>0</ObjContainerID>
 </block>
-<block type="Module" ID="685447167">
+<block type="Module" ID="976535551">
  <ObjName>X3Camera</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5948,9 +5948,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="809416703">
+<block type="Module" ID="53630975">
  <ObjName>X3Canvas</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <Superclass>OpenGLSurface</Superclass>
  <ItemFlags>1</ItemFlags>
@@ -6060,6 +6060,33 @@
    <SourceLine>End Function</SourceLine>
   </ItemSource>
  </HookInstance>
+ <HookInstance>
+  <ItemName>MouseUp</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub MouseUp(x as Integer, y as Integer)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
+   <SourceLine>Dim modelIndex As Integer</SourceLine>
+   <SourceLine>Dim polygonIndex As Integer</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model = X3_PickModel(Me, Me.Graphics.Scene, x, y, modelIndex, polygonIndex)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if model &lt;&gt; nil then</SourceLine>
+   <SourceLine>RaiseEvent PolygonMouseUp x, y, model.Polygon(polygonIndex), polygonIndex</SourceLine>
+   <SourceLine>RaiseEvent ModelMouseUp x, y, model, modelIndex</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>RaiseEvent MouseUp(x, y)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+ </HookInstance>
  <Method>
   <ItemName>Constructor</ItemName>
   <Compatibility></Compatibility>
@@ -6130,6 +6157,30 @@
   <ItemFlags>33</ItemFlags>
   <SystemFlags>0</SystemFlags>
   <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
+ </Hook>
+ <Hook>
+  <ItemName>PolygonMouseUp</ItemName>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemFlags>33</ItemFlags>
+  <SystemFlags>0</SystemFlags>
+  <ItemParams>x As Integer, y As Integer, polygon As X3Core.X3Polygon, polygonIndex As Integer</ItemParams>
+  <ItemResult></ItemResult>
+ </Hook>
+ <Hook>
+  <ItemName>MouseUp</ItemName>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemFlags>33</ItemFlags>
+  <SystemFlags>0</SystemFlags>
+  <ItemParams>x As Integer, y As Integer</ItemParams>
+  <ItemResult></ItemResult>
+ </Hook>
+ <Hook>
+  <ItemName>ModelMouseUp</ItemName>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemFlags>33</ItemFlags>
+  <SystemFlags>0</SystemFlags>
+  <ItemParams>x As Integer, y As Integer, model As X3Core.X3Model, modelIndex As Integer</ItemParams>
   <ItemResult></ItemResult>
  </Hook>
  <Property>
@@ -6319,9 +6370,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1199761407">
+<block type="Module" ID="686573567">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6663,6 +6714,12 @@
  </Property>
  <ViewBehavior>
   <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Index</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>ID</PropertyGroup>
@@ -6670,23 +6727,17 @@
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Left</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>Position</PropertyGroup>
    <PropertyValue>0</PropertyValue>
    <ItemType>Integer</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Name</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Super</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
   </ViewProperty>
   <ViewProperty>
    <ObjName>Top</ObjName>
@@ -6712,9 +6763,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="2012588031">
+<block type="Module" ID="1965103103">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6730,7 +6781,7 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Dim col As new X3Color.X3Color(Red, Green, Blue, Alpha)</SourceLine>
+   <SourceLine>Dim col As new X3Core.X3Color(Red, Green, Blue, Alpha)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>return col</SourceLine>
    <SourceLine></SourceLine>
@@ -6913,6 +6964,39 @@
  </Property>
  <ViewBehavior>
   <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Index</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <PropertyValue>-2147483648</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Left</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Top</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Alpha</ObjName>
    <PropertyGroup>Behavior</PropertyGroup>
    <ItemType>Double</ItemType>
@@ -6928,48 +7012,15 @@
    <ItemType>Double</ItemType>
   </ViewProperty>
   <ViewProperty>
-   <ObjName>Index</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <PropertyValue>-2147483648</PropertyValue>
-   <ItemType>Integer</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Left</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Position</PropertyGroup>
-   <PropertyValue>0</PropertyValue>
-   <ItemType>Integer</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Name</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-  </ViewProperty>
-  <ViewProperty>
    <ObjName>Red</ObjName>
    <PropertyGroup>Behavior</PropertyGroup>
    <ItemType>Double</ItemType>
   </ViewProperty>
-  <ViewProperty>
-   <ObjName>Super</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Top</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Position</PropertyGroup>
-   <PropertyValue>0</PropertyValue>
-   <ItemType>Integer</ItemType>
-  </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1742422015">
+<block type="Module" ID="1436096511">
  <ObjName>X3Graphics</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -8391,11 +8442,24 @@
    <PropertyValue>True</PropertyValue>
    <ItemType>Boolean</ItemType>
   </ViewProperty>
+  <ViewProperty>
+   <ObjName>TextUnit</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>FontUnits</ItemType>
+   <EditorType>Enum</EditorType>
+   <Enumeration>
+    <ItemDef>0 - Default</ItemDef>
+    <ItemDef>1 - Pixel</ItemDef>
+    <ItemDef>2 - Point</ItemDef>
+    <ItemDef>3 - Inches</ItemDef>
+    <ItemDef>4 - Millimeter</ItemDef>
+   </Enumeration>
+  </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1160194047">
+<block type="Module" ID="754487295">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9291,10 +9355,10 @@
  </Property>
  <ViewBehavior>
   <ViewProperty>
-   <ObjName>CIndex</ObjName>
-   <PropertyGroup>Behavior</PropertyGroup>
-   <PropertyValue>-1</PropertyValue>
-   <ItemType>Integer</ItemType>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
   </ViewProperty>
   <ViewProperty>
    <ObjName>Index</ObjName>
@@ -9304,6 +9368,12 @@
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Left</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>Position</PropertyGroup>
@@ -9311,16 +9381,23 @@
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
-   <ObjName>MIndex</ObjName>
+   <ObjName>Top</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>CIndex</ObjName>
    <PropertyGroup>Behavior</PropertyGroup>
    <PropertyValue>-1</PropertyValue>
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
-   <ObjName>Name</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
+   <ObjName>MIndex</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>-1</PropertyValue>
+   <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
    <ObjName>NIndex</ObjName>
@@ -9350,29 +9427,16 @@
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
-   <ObjName>Super</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-  </ViewProperty>
-  <ViewProperty>
    <ObjName>TIndex</ObjName>
    <PropertyGroup>Behavior</PropertyGroup>
    <PropertyValue>-1</PropertyValue>
    <ItemType>Integer</ItemType>
   </ViewProperty>
-  <ViewProperty>
-   <ObjName>Top</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Position</PropertyGroup>
-   <PropertyValue>0</PropertyValue>
-   <ItemType>Integer</ItemType>
-  </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1298827263">
+<block type="Module" ID="835641343">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9492,6 +9556,12 @@
  </Property>
  <ViewBehavior>
   <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Index</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>ID</PropertyGroup>
@@ -9499,23 +9569,17 @@
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Left</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>Position</PropertyGroup>
    <PropertyValue>0</PropertyValue>
    <ItemType>Integer</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Name</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Super</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
   </ViewProperty>
   <ViewProperty>
    <ObjName>Top</ObjName>
@@ -9526,9 +9590,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1763082239">
+<block type="Module" ID="1379342335">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -10154,34 +10218,16 @@
  </Property>
  <ViewBehavior>
   <ViewProperty>
-   <ObjName>Index</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <PropertyValue>-2147483648</PropertyValue>
-   <ItemType>Integer</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Invalidate</ObjName>
-   <PropertyGroup>Behavior</PropertyGroup>
-   <PropertyValue>False</PropertyValue>
-   <ItemType>Boolean</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Left</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Position</PropertyGroup>
-   <PropertyValue>0</PropertyValue>
-   <ItemType>Integer</ItemType>
-  </ViewProperty>
-  <ViewProperty>
    <ObjName>Name</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>ID</PropertyGroup>
    <ItemType>String</ItemType>
   </ViewProperty>
   <ViewProperty>
-   <ObjName>OGLName</ObjName>
-   <PropertyGroup>Behavior</PropertyGroup>
+   <ObjName>Index</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <PropertyValue>-2147483648</PropertyValue>
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
@@ -10191,17 +10237,35 @@
    <ItemType>String</ItemType>
   </ViewProperty>
   <ViewProperty>
+   <ObjName>Left</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Top</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>Position</PropertyGroup>
    <PropertyValue>0</PropertyValue>
    <ItemType>Integer</ItemType>
   </ViewProperty>
+  <ViewProperty>
+   <ObjName>Invalidate</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>OGLName</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1438887935">
+<block type="Module" ID="2015612927">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -10395,9 +10459,10 @@
  </Property>
  <ViewBehavior>
   <ViewProperty>
-   <ObjName>Height</ObjName>
-   <PropertyGroup>Behavior</PropertyGroup>
-   <ItemType>Integer</ItemType>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
   </ViewProperty>
   <ViewProperty>
    <ObjName>Index</ObjName>
@@ -10407,6 +10472,12 @@
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Left</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>Position</PropertyGroup>
@@ -10414,27 +10485,20 @@
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
-   <ObjName>Name</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>OGLName</ObjName>
-   <PropertyGroup>Behavior</PropertyGroup>
-   <ItemType>Integer</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Super</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-  </ViewProperty>
-  <ViewProperty>
    <ObjName>Top</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>Position</PropertyGroup>
    <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Height</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>OGLName</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
@@ -10455,9 +10519,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="189396991">
+<block type="Module" ID="992749567">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -10542,6 +10606,12 @@
  </Property>
  <ViewBehavior>
   <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Index</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>ID</PropertyGroup>
@@ -10549,23 +10619,17 @@
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Left</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>Position</PropertyGroup>
    <PropertyValue>0</PropertyValue>
    <ItemType>Integer</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Name</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Super</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
   </ViewProperty>
   <ViewProperty>
    <ObjName>Top</ObjName>
@@ -10586,9 +10650,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="84860927">
+<block type="Module" ID="2106126335">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -11074,6 +11138,12 @@
  </Property>
  <ViewBehavior>
   <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Index</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>ID</PropertyGroup>
@@ -11081,23 +11151,17 @@
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Left</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>Position</PropertyGroup>
    <PropertyValue>0</PropertyValue>
    <ItemType>Integer</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Name</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Super</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
   </ViewProperty>
   <ViewProperty>
    <ObjName>Top</ObjName>
@@ -11128,9 +11192,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1619632127">
+<block type="Module" ID="385906687">
  <ObjName>X3Scene</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -11818,9 +11882,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1640120319">
+<block type="Module" ID="1237409791">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -11937,11 +12001,23 @@
  </Property>
  <ViewBehavior>
   <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Index</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>ID</PropertyGroup>
    <PropertyValue>-2147483648</PropertyValue>
    <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
   </ViewProperty>
   <ViewProperty>
    <ObjName>Left</ObjName>
@@ -11951,34 +12027,22 @@
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
-   <ObjName>Name</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Shininess</ObjName>
-   <PropertyGroup>Behavior</PropertyGroup>
-   <ItemType>Double</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Super</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-  </ViewProperty>
-  <ViewProperty>
    <ObjName>Top</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>Position</PropertyGroup>
    <PropertyValue>0</PropertyValue>
    <ItemType>Integer</ItemType>
   </ViewProperty>
+  <ViewProperty>
+   <ObjName>Shininess</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Double</ItemType>
+  </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1170065407">
+<block type="Module" ID="639436799">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -12139,6 +12203,12 @@
  </Property>
  <ViewBehavior>
   <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Index</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>ID</PropertyGroup>
@@ -12146,23 +12216,17 @@
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Left</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>Position</PropertyGroup>
    <PropertyValue>0</PropertyValue>
    <ItemType>Integer</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Name</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Super</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
   </ViewProperty>
   <ViewProperty>
    <ObjName>Top</ObjName>
@@ -12173,9 +12237,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="2030501887">
+<block type="Module" ID="2004957183">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -12289,6 +12353,12 @@
  </Property>
  <ViewBehavior>
   <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Index</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>ID</PropertyGroup>
@@ -12296,23 +12366,17 @@
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Left</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>Position</PropertyGroup>
    <PropertyValue>0</PropertyValue>
    <ItemType>Integer</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Name</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Super</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
   </ViewProperty>
   <ViewProperty>
    <ObjName>Top</ObjName>
@@ -12343,9 +12407,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="57780223">
+<block type="Module" ID="2120099839">
  <ObjName>X3IO</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -14791,9 +14855,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1523539967">
+<block type="Module" ID="964222975">
  <ObjName>X3BoundingBox</ObjName>
- <ObjContainerID>2142396415</ObjContainerID>
+ <ObjContainerID>1511282687</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -15040,6 +15104,12 @@
  </Property>
  <ViewBehavior>
   <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Index</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>ID</PropertyGroup>
@@ -15047,23 +15117,17 @@
    <ItemType>Integer</ItemType>
   </ViewProperty>
   <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
    <ObjName>Left</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>Position</PropertyGroup>
    <PropertyValue>0</PropertyValue>
    <ItemType>Integer</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Name</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Super</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
   </ViewProperty>
   <ViewProperty>
    <ObjName>Top</ObjName>
@@ -15110,9 +15174,9 @@
    <EditorCount>1</EditorCount>
    <Editor>
     <EditorIndex>0</EditorIndex>
-    <EditorLocation>VectorJam.VJ_RenderScene</EditorLocation>
+    <EditorLocation>MainWindow.Controls.Surface.MouseDown</EditorLocation>
     <EditorPath></EditorPath>
-    <EditingPartID>1637615615</EditingPartID>
+    <EditingPartID>1541412863</EditingPartID>
    </Editor>
    <SelectedTab>0</SelectedTab>
   </Editors>
